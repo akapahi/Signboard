@@ -6,7 +6,7 @@ var bodyParser = require("body-parser");
 // Note that if you leave your app public, this database file will be copied if
 // someone forks your app. So don't use it to store sensitive information.
 var Datastore = require("nedb"),
-  db = new Datastore({ filename: "/sandbox/src/db/database", autoload: true });
+  db = new Datastore({ filename: "db/database", autoload: true });
 
 // Using `public` for static files: http://expressjs.com/en/starter/static-files.html
 app.use(express.static("public"));
@@ -62,7 +62,7 @@ app.get("/reset", function (request, response) {
 
 // Serve the root url: http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (request, response) {
-  response.sendFile("/sandbox/views/index.html");
+  response.sendFile("views/index.html");
 });
 
 // Listen on port 8080
