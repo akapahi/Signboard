@@ -10,7 +10,7 @@ var Datastore = require("nedb"),
 
 var Datastore1 = require("nedb"),
   db1 = new Datastore1({
-    filename: "/sandbox/src/db/all_database",
+    filename: "db/all_database",
     autoload: true
   });
 
