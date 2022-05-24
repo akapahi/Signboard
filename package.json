@@ -2,7 +2,7 @@
   "name": "nedb-example-starter",
   "version": "1.0.0",
   "description": "Persistent NeDB database demo.",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
