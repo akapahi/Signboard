@@ -8,6 +8,12 @@ var bodyParser = require("body-parser");
 var Datastore = require("nedb"),
   db = new Datastore({ filename: "db/database", autoload: true });
 
+var Datastore1 = require("nedb"),
+  db1 = new Datastore1({
+    filename: "/sandbox/src/db/all_database",
+    autoload: true
+  });
+
 // Using `public` for static files: http://expressjs.com/en/starter/static-files.html
 app.use(express.static("public"));
 
@@ -44,6 +50,13 @@ app.get("/users", function (request, response) {
   });
 });
 
+app.get("/all_user", function (request, response) {
+  db1.find({ name: { $exists: true } }, function (err, docs) {
+    // finds all users in the database
+    response.send(docs); // sends users back to the page
+  });
+});
+
 // create a new users entry
 app.post("/new", urlencodedParser, function (request, response) {
   db.remove({}, { multi: true }, function (err, numRemoved) {
@@ -51,6 +64,11 @@ app.post("/new", urlencodedParser, function (request, response) {
       response.redirect("/");
     });
   });
+  db1.insert({ name: request.body.user }, function (
+    err,
+    numReplaced,
+    upsert
+  ) {});
 });
 
 // removes existing users and creates new entries with just the default users
