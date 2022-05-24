@@ -62,7 +62,7 @@ app.get("/reset", function (request, response) {
 
 // Serve the root url: http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (request, response) {
-  response.sendFile("views/index.html");
+  response.sendFile("views/index.html", { root : __dirname});
 });
 
 // Listen on port 8080
