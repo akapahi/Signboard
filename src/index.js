@@ -11,6 +11,8 @@ var Datastore = require("nedb"),
 // Using `public` for static files: http://expressjs.com/en/starter/static-files.html
 app.use(express.static("public"));
 
+app.listen(process.env.PORT);
+
 // Initial set of users to populate the database with
 var defaultUsers = [];
 var users = defaultUsers.slice();
