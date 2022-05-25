@@ -38,12 +38,13 @@ function draw() {
 }
 
 class scrollText{
-	constructor(text, size = random(16,32), x = random(width), y = random(height)) {
+	constructor(text, size = random(16,64), x = random(width), y = random(height)) {
 		this.size = size;
 		this.text = text;
+		this.life = random(100, 500);
 		this.position = createVector(x, y);
-		this.velocity = createVector(random(0, 4),0);
-		this.velocity.setMag(random(0.5, 2));
+		this.velocity = createVector(random(0,1),random(-1, 1));
+		this.velocity.setMag(random(-0.5, -2));
 	}
 
 	update() {
