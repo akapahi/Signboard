@@ -53,7 +53,7 @@ app.get("/users", function (request, response) {
 app.get("/all_user", function (request, response) {
   db1.find({ name: { $exists: true } }, function (err, docs) {
     // finds all users in the database
-    response.send(docs); // sends users back to the page
+    response.json(docs); // sends users back to the page
   });
 });
 
