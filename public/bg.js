@@ -44,7 +44,7 @@ class scrollText{
 		this.life = random(100, 500);
 		this.position = createVector(x, y);
 		this.velocity = createVector(random(0,1),random(-1, 1));
-		this.velocity.setMag(random(-0.5, -2));
+		this.velocity.setMag(random(0.5, 2));
 	}
 
 	update() {
