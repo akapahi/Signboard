@@ -2,7 +2,7 @@ var messages = [];
 
 function preload() {
   // Get the most recent earthquake in the database
-  font = loadFont('dotFont.ttf');
+  font = loadFont('dotFont.TTF');
 }
 
 function setup() {
