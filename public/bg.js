@@ -48,7 +48,7 @@ class scrollText{
 	}
 
 	update() {
-		this.position.add(this.velocity);
+		this.position.subtract(this.velocity);
 		if (this.position.x > width) this.position.x = 0;
 		if (this.position.x < 0) this.position.x = width;
 		if (this.position.y > height) this.position.y = 0;
