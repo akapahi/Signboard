@@ -8,7 +8,7 @@ function setup() {
   	if (err !== null) {
     		alert('Something went wrong: ' + err);
   	} else {
-    		alert('Your query count: ' + data.query.count);
+    		alert('Your query count: ' + data);
   	}
 });
 }
