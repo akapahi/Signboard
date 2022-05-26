@@ -49,10 +49,12 @@ class scrollText{
 
 	update() {
 		this.position.sub(this.velocity);
+		let bounding_box = font.textBounds(this.text, this.position.x, this.position.y, this.size);
+
 		if (this.position.x > width) this.position.x = 0;
-		if (this.position.x < 0) this.position.x = width;
-		if (this.position.y > height) this.position.y = 0;
-		if (this.position.y < 0) this.position.y = height;
+		if (this.position.x < 0 - bounding_box.w) this.position.x = width;
+		if (this.position.y > height + bounding_box.w) this.position.y = 0;
+		if (this.position.y < 0 ) this.position.y = height;
 	}
 
 	show() {
