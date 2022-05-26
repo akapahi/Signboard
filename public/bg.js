@@ -54,7 +54,7 @@ class scrollText{
 		if (this.position.x > width) this.position.x = 0;
 		if (this.position.x < 0 - bounding_box.w) this.position.x = width;
 		if (this.position.y > height + bounding_box.w) this.position.y = 0;
-		if (this.position.y < 0 ) this.position.y = height;
+		if (this.position.y < 0 -bounding_box.w) this.position.y = height;
 	}
 
 	show() {
