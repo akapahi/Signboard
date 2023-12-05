@@ -1,2 +1,2 @@
 # Signboard
-Created with CodeSandbox
+Send messages to our internet connected signboard
